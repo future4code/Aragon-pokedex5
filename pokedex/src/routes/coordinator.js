@@ -7,7 +7,6 @@ export const irParaPokedex = (navigate) => {
 
 }
 
-
 export const irParaPokeLista = (navigate) => {
     navigate("/")
 }
