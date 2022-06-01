@@ -1,14 +1,18 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import useRequisicoesData from "../hooks/useRequisicoes";
-import { useRequisicoesDetalhes } from "../hooks/useRequecisaoesDetalhes";
 
 export const GlobalContext = createContext()
 
 export default function GlobalState (props) {
     const [pokeLista] = useRequisicoesData("list?limit=20&offset=0", [])
+
+    const [pokedex, setPokedex] = useState([])
+
     
     const context = {
-        pokeLista:pokeLista
+        pokeLista:pokeLista,
+        pokedex: pokedex,
+        setPokedex: setPokedex
     }
     
     return(

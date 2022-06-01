@@ -10,6 +10,7 @@ export default function Pokedetalhes() {
     useEffect(() => {
         buscarDetalhe(parametro.pokeName)
     }, [])
+    const primeirasHabilidades = pokeDetalhes.abilities && [...pokeDetalhes.abilities].splice(0, 5)
 
     const detalhes =
         pokeDetalhes.name?
@@ -44,7 +45,7 @@ export default function Pokedetalhes() {
                 </section>
                 <section>
                     <h3> Habilidades: </h3>
-                    {pokeDetalhes.abilities.filter((skills, index) => {
+                    {primeirasHabilidades.map((skills) => {
                         return(
                             <li key={skills}>
                                 {skills}

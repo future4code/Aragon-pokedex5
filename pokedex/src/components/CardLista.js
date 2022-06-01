@@ -1,29 +1,50 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { GlobalContext } from "../global/GlobalState";
 import { useNavigate } from "react-router-dom";
 import { useRequisicoesDetalhes } from "../hooks/useRequecisaoesDetalhes";
 import { irParaPokedetalhes } from "../routes/coordinator";
 
-export default function CardLista (props) {
+export default function CardLista(props) {
     const navigate = useNavigate()
     const [pokeDetalhes, buscarDetalhe] = useRequisicoesDetalhes({})
+    const context = useContext(GlobalContext)
+    const { pokedex, setPokedex } = context
+
+    const adicionarAPokedex = () => {
+        const novaPokedex = [...pokedex, pokeDetalhes]
+
+        const pokedexEmOrdem = novaPokedex.sort((a, b) => {
+            return a.id - b.id
+        })
+        setPokedex(pokedexEmOrdem)
+        // console.log(pokedex)
+    }
 
     useEffect(() => {
         buscarDetalhe(props.pokemon.name)
     }, [])
 
-    return(
+
+    return (
         <section>
-                <span>
-                    {pokeDetalhes.name?.toUpperCase()}
-                </span>
-                <span>
-                    - Nº  {pokeDetalhes.id}
-                </span>
-                <br />
-                    <button>Adicionar a Pokedex</button>
-                <br />
-                    <button onClick={() => irParaPokedetalhes(navigate, pokeDetalhes.name)}>Ver detalhes</button>
-                <hr />
+            <span>
+                {pokeDetalhes.name?.toUpperCase()}
+            </span>
+            <span>
+                - Nº  {pokeDetalhes.id}
+            </span>
+            <figure>
+                <img src={pokeDetalhes.images?.front} alt={`Imagem do ${pokeDetalhes.name}`} />
+            </figure>
+            <br />
+            {props.paginaAtual === "pokeLista"
+            ?<button onClick={() => adicionarAPokedex()}>Adicionar a Pokedex</button>
+            :<button>Remover da Pokedex</button>
+            
+            }
+            <br />
+            <button onClick={() => irParaPokedetalhes(navigate, pokeDetalhes.name)}>Ver detalhes</button>
+            <hr />
         </section>
     )
 }
