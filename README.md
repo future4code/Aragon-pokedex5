@@ -9,8 +9,9 @@ Link do Surge: www.link.com.br
 
 O que funciona:
 - Dia1
-- 
+- Dia2
+- Dia3
 
 O que não funciona: 
-- Dia2
+- Dia4
 - 
