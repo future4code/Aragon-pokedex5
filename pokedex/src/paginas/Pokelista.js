@@ -11,7 +11,9 @@ export default function Pokelista() {
         return (
             <CardLista 
             key={pokemon.id}
-            pokemon={pokemon}/>
+            pokemon={pokemon}
+            paginaAtual={"pokeLista"}
+            />
         )
     }) : <p> Carregando... </p>
     
