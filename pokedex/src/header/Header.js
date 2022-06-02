@@ -26,7 +26,7 @@ export default function Header(props) {
 
     return (
         <div>
-        {rederizaHeader()}
+            {rederizaHeader()}
         </div>
     )
 }

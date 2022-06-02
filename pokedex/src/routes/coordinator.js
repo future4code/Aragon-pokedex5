@@ -4,7 +4,6 @@ export const irParaPokedetalhes = (navigate, pokeName) => {
 
 export const irParaPokedex = (navigate) => {
     navigate("/pokedex")
-
 }
 
 export const irParaPokeLista = (navigate) => {

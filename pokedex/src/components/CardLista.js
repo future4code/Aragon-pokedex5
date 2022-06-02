@@ -12,18 +12,22 @@ export default function CardLista(props) {
 
     const adicionarAPokedex = () => {
         const novaPokedex = [...pokedex, pokeDetalhes]
-
         const pokedexEmOrdem = novaPokedex.sort((a, b) => {
             return a.id - b.id
         })
         setPokedex(pokedexEmOrdem)
-        // console.log(pokedex)
     }
+
+    const removerDaPokedex = () => {
+        const novaPokedex = pokedex.filter((poke) => {
+            return pokeDetalhes.id !== poke.id;
+        });
+        setPokedex(novaPokedex);
+    };
 
     useEffect(() => {
         buscarDetalhe(props.pokemon.name)
     }, [])
-
 
     return (
         <section>
@@ -34,16 +38,15 @@ export default function CardLista(props) {
                 - Nº  {pokeDetalhes.id}
             </span>
             <figure>
-                <img src={pokeDetalhes.images?.front} alt={`Imagem do ${pokeDetalhes.name}`} />
+                <img src={pokeDetalhes.images?.front} alt={pokeDetalhes.name} />
             </figure>
             <br />
-            {props.paginaAtual === "pokeLista"
-            ?<button onClick={() => adicionarAPokedex()}>Adicionar a Pokedex</button>
-            :<button>Remover da Pokedex</button>
-            
-            }
+                {props.paginaAtual === "pokeLista"
+                ?<button onClick={() => adicionarAPokedex()}>Adicionar a Pokedex</button>
+                :<button onClick={() => removerDaPokedex()}>Remover da Pokedex</button>
+                }
             <br />
-            <button onClick={() => irParaPokedetalhes(navigate, pokeDetalhes.name)}>Ver detalhes</button>
+                <button onClick={() => irParaPokedetalhes(navigate, pokeDetalhes.name)}>Ver detalhes</button>
             <hr />
         </section>
     )

@@ -10,6 +10,7 @@ export default function Pokedetalhes() {
     useEffect(() => {
         buscarDetalhe(parametro.pokeName)
     }, [])
+    
     const primeirasHabilidades = pokeDetalhes.abilities && [...pokeDetalhes.abilities].splice(0, 5)
 
     const detalhes =
@@ -19,8 +20,8 @@ export default function Pokedetalhes() {
                 <section>
                     <Header paginaAtual={"pokeDetalhes"} />
                     <h2> {pokeDetalhes.name?.toUpperCase()} </h2>
-                    <img src={pokeDetalhes.images?.front} alt={`Imagem do ${pokeDetalhes.name} em frente`}/>
-                    <img src={pokeDetalhes.images?.back} alt={`Imagem do ${pokeDetalhes.name} atrás`}/>
+                    <img src={pokeDetalhes.images?.front} alt={`${pokeDetalhes.name} em frente`}/>
+                    <img src={pokeDetalhes.images?.back} alt={`${pokeDetalhes.name} atrás`}/>
                 </section>
                 <section>
                     <h3> Status: </h3>

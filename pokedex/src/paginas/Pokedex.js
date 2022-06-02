@@ -16,6 +16,7 @@ export default function Pokedex() {
             />
         )
     })
+    
     return (
         <div>
             <Header paginaAtual={"pokedex"} />
