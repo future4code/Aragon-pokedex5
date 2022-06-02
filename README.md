@@ -3,15 +3,15 @@
 Nome dos integrantes: 
 - Geovana Oliveira
 - Pâmela Lorenz
-- Samuel Araújo
+- Samuel Araujo
 
-Link do Surge: www.link.com.br
+Link do Surge: GPS-Pokedex.surge.sh
 
 O que funciona:
 - Dia1
 - Dia2
 - Dia3
+- Dia4
 
 O que não funciona: 
-- Dia4
-- 
+- Dia5

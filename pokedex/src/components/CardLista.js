@@ -12,12 +12,10 @@ export default function CardLista(props) {
 
     const adicionarAPokedex = () => {
         const novaPokedex = [...pokedex, pokeDetalhes]
-
         const pokedexEmOrdem = novaPokedex.sort((a, b) => {
             return a.id - b.id
         })
         setPokedex(pokedexEmOrdem)
-        // console.log(pokedex)
     }
     const removerDaPokedex = () => {
         const novaPokedex = pokedex.filter((poke) => {
@@ -25,13 +23,22 @@ export default function CardLista(props) {
                 pokeDetalhes.id !== poke.id
             )
 
+pokedex-dia4-2
+    const removerDaPokedex = () => {
+        const novaPokedex = pokedex.filter((poke) => {
+            return pokeDetalhes.id !== poke.id;
+        });
+        setPokedex(novaPokedex);
+    };
+
+
         })
         setPokedex(novaPokedex)
     }
+ master
     useEffect(() => {
         buscarDetalhe(props.pokemon.name)
     }, [])
-
 
     return (
         <section>
@@ -42,16 +49,23 @@ export default function CardLista(props) {
                 - Nº  {pokeDetalhes.id}
             </span>
             <figure>
-                <img src={pokeDetalhes.images?.front} alt={`Imagem do ${pokeDetalhes.name}`} />
+                <img src={pokeDetalhes.images?.front} alt={pokeDetalhes.name} />
             </figure>
             <br />
+pokedex-dia4-2
+                {props.paginaAtual === "pokeLista"
+                ?<button onClick={() => adicionarAPokedex()}>Adicionar a Pokedex</button>
+                :<button onClick={() => removerDaPokedex()}>Remover da Pokedex</button>
+                }
+
             {props.paginaAtual === "pokeLista"
                 ? <button onClick={() => adicionarAPokedex()}>Adicionar a Pokedex</button>
                 : <button onClick={() => removerDaPokedex()}>Remover da Pokedex</button>
 
             }
+master
             <br />
-            <button onClick={() => irParaPokedetalhes(navigate, pokeDetalhes.name)}>Ver detalhes</button>
+                <button onClick={() => irParaPokedetalhes(navigate, pokeDetalhes.name)}>Ver detalhes</button>
             <hr />
         </section>
     )
