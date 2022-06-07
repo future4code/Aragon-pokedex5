@@ -23,19 +23,10 @@ export default function CardLista(props) {
                 pokeDetalhes.id !== poke.id
             )
 
-pokedex-dia4-2
-    const removerDaPokedex = () => {
-        const novaPokedex = pokedex.filter((poke) => {
-            return pokeDetalhes.id !== poke.id;
-        });
-        setPokedex(novaPokedex);
-    };
-
 
         })
         setPokedex(novaPokedex)
     }
- master
     useEffect(() => {
         buscarDetalhe(props.pokemon.name)
     }, [])
@@ -52,18 +43,10 @@ pokedex-dia4-2
                 <img src={pokeDetalhes.images?.front} alt={pokeDetalhes.name} />
             </figure>
             <br />
-pokedex-dia4-2
                 {props.paginaAtual === "pokeLista"
                 ?<button onClick={() => adicionarAPokedex()}>Adicionar a Pokedex</button>
                 :<button onClick={() => removerDaPokedex()}>Remover da Pokedex</button>
                 }
-
-            {props.paginaAtual === "pokeLista"
-                ? <button onClick={() => adicionarAPokedex()}>Adicionar a Pokedex</button>
-                : <button onClick={() => removerDaPokedex()}>Remover da Pokedex</button>
-
-            }
-master
             <br />
                 <button onClick={() => irParaPokedetalhes(navigate, pokeDetalhes.name)}>Ver detalhes</button>
             <hr />

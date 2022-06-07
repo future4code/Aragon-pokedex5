@@ -15,7 +15,7 @@ export default function Pokelista() {
 
     const pokeCartao = pokeLista[0] ? pokeLista.filter((pokemonLista) => {
         for(let pokemonPokedex of pokedex){
-            console.log(pokemonLista, pokemonPokedex)
+            // console.log(pokemonLista, pokemonPokedex)
             if(pokemonLista.id == pokemonPokedex.id){
                 return false
             } 
@@ -34,7 +34,6 @@ export default function Pokelista() {
     return (
         <div>
             <Header paginaAtual={"pokeLista"} />
-            <hr/>
             <h2>Lista de Pokemons</h2>
             <h3> Seleciona a página </h3>
             {   pagina!==1 && 
