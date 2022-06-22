@@ -1,16 +1,17 @@
-# POKEDEX
+# POKEDEX 🐱‍🚀🐣
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Geovana Oliveira
+- Pâmela Lorenz
+- Samuel Araujo
 
-Link do Surge: www.link.com.br
+Link do Surge: GPS-Pokedex.surge.sh
 
 O que funciona:
-- Item 1
-- Item 2
+- Dia1
+- Dia2
+- Dia3
+- Dia4
 
 O que não funciona: 
-- Item 3
-- Item 4
+- Dia5
